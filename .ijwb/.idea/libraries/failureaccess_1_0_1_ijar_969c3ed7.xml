@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="failureaccess-1.0.1-ijar_969c3ed7">
+    <CLASSES>
+      <root url="jar:///private/var/tmp/_bazel_treblereel/2c02e1b9af120537259d5caa79119827/execroot/com_google_j2cl/bazel-out/darwin_arm64-fastbuild/bin/external/com_google_guava_failure_access/_ijar/com_google_guava_failure_access/failureaccess-1.0.1-ijar.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

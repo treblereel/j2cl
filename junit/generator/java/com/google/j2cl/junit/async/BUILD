@@ -3,7 +3,7 @@
 # JVM async testing support should be placed under Guava or Xplat.
 
 load("//build_defs:rules.bzl", "j2cl_library")
-load("@rules_java//java:defs.bzl", "java_library")
+load("@bazel_common//tools/javadoc:javadoc.bzl", "javadoc_library")
 
 package(
     default_applicable_licenses = ["//:j2cl_license"],
@@ -16,6 +16,18 @@ package(
 
 java_library(
     name = "async",
+    testonly = 1,
+    srcs = [
+        "AsyncTestRunner.java",
+        "Timeout.java",
+    ],
+    deps = [
+        "//third_party:guava",
+        "//third_party:junit",
+    ],
+)
+javadoc_library(
+    name = "async-javadoc",
     testonly = 1,
     srcs = [
         "AsyncTestRunner.java",

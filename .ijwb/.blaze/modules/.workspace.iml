@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.system.id="Blaze" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$/../../..">
+      <sourceFolder url="file://$MODULE_DIR$/../../../benchmarking/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../benchmarking/javatests" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../jre/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../junit/emul/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../junit/emul/java/org/junit/super-j2kt" isTestSource="false" packagePrefix="org.junit" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../junit/generator/javatests" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../samples/box2d/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../tools/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../tools/javatests" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../transpiler/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../transpiler/javatests" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../transpiler/javatests/com/google/j2cl/integration/java" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../.." />
+      <excludePattern pattern="bazel-bin" />
+      <excludePattern pattern="bazel-genfiles" />
+      <excludePattern pattern="bazel-out" />
+      <excludePattern pattern="bazel-testlogs" />
+      <excludePattern pattern="bazel-j2cl" />
+      <excludePattern pattern=".ijwb" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="failureaccess-1.0.1-ijar_969c3ed7" level="project" />
+    <orderEntry type="library" name="liblite-hjar_21bb8b0" level="project" />
+    <orderEntry type="library" name="libcore-hjar_21bb8b0" level="project" />
+    <orderEntry type="library" name="truth-1.0_3c1de0a7" level="project" />
+    <orderEntry type="library" name="junit-4.13.2_28ec128f" level="project" />
+    <orderEntry type="library" name="jsr305-2.0.3_f0c7dce8" level="project" />
+    <orderEntry type="library" name="escapevelocity-1.1_6ef5cda2" level="project" />
+    <orderEntry type="library" name="auto-common-1.1.2_efc65bb7" level="project" />
+    <orderEntry type="library" name="libannotations-hjar_3416f13e" level="project" />
+    <orderEntry type="library" name="error_prone_annotations-2.23.0_8a369a33" level="project" />
+    <orderEntry type="library" name="jspecify-0.3.0_c1626876" level="project" />
+    <orderEntry type="library" name="auto-value-annotations-1.6_9c1ac00a" level="project" />
+    <orderEntry type="library" name="auto-service-annotations-1.0_4835524e" level="project" />
+    <orderEntry type="library" name="guava-32.1.1-jre_3b67c15a" level="project" />
+    <orderEntry type="library" name="HashMapObjectPutBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="TreeMapStringIterationBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="libworker_protocol_proto-speed-hjar_1ef28e0e" level="project" />
+    <orderEntry type="library" name="StringConcatDoubleBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="ArraysSortObjectBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="HashMapObjectContainsValueBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="libcode_removal_info_proto-speed-hjar_51b87d20" level="project" />
+    <orderEntry type="library" name="SandboxBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="InstanceOfDeepBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="BigExceptionBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="HashMapStringContainsKeyBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="ArrayObjectIterationBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="SmallExceptionBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="LinkedHashMapStringPutBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="StringEqualsIgnoreCaseNonAsciiBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="DynamicClassDispatchBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="SmallExceptionWithStackTraceAccessedBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="Box2dBenchmark_lib-filtered-gen_37e8f914" level="project" />
+    <orderEntry type="library" name="TreeMapStringPutBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="HashMapObjectIterationBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="RayTraceBenchmark_lib-filtered-gen_37e8f914" level="project" />
+    <orderEntry type="library" name="StringHashCodeBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="BigExceptionWithStackTraceAccessedBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="InstanceOfBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="StringToUpperCaseNonAsciiBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="HashMapDoubleContainsKeyBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="SystemArrayCopyIntBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="LinkedHashMapStringContainsKeyBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="libjunit_integration_helper-gen_1a21022c" level="project" />
+    <orderEntry type="library" name="HashMapStringPutBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="ArrayObjectSetBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="LongShiftBigNumbersBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="ArrayListObjectSetBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="ArrayListObjectIterationInterfaceBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="TreeMapStringContainsKeyBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="HashMapObjectContainsKeyBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="ArrayListObjectGetBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="StringBuilderLongStringsBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="HashMapDoublePutBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="LongDivisionSmallNumbersBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="HashMapStringContainsValueBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="LinkedHashMapStringContainsValueBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="ArraysSortIntBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="ArrayTestObjectCreateBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="ArraysCopyOfObjectBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="StringConcatIntBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="ArrayIntCreateBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="RichardsBenchmark_lib-filtered-gen_37e8f914" level="project" />
+    <orderEntry type="library" name="SystemArrayCopyObjectBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="LongAddSmallNumbersBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="ArrayListObjectIterationBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="StringToUpperCaseBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="ArraysCopyOfIntBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="LongAddBigNumbersBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="LongMultiplyBigNumbersBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="HashMapStringIterationBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="ArrayIntSumBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="DeltaBlueBenchmark_lib-filtered-gen_37e8f914" level="project" />
+    <orderEntry type="library" name="StringEqualsIgnoreCaseBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="StringBuilderShortStringsBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="ArrayObjectCreateBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="DynamicInterfaceDispatchBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="LongShiftSmallNumbersBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="LongMultiplySmallNumbersBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="TreeMapStringContainsValueBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="ArrayListObjectAddBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="ArrayTestObjectSetBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="LongDivisionBigNumbersBenchmark_lib-filtered-gen_80ef1941" level="project" />
+    <orderEntry type="library" name="LinkedHashMapStringIterationBenchmark_lib-filtered-gen_80ef1941" level="project" />
+  </component>
+</module>

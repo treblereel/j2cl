@@ -1,7 +1,7 @@
 # Description:
 #   This package contains backend driver code.
 
-load("@rules_java//java:defs.bzl", "java_library")
+load("@bazel_common//tools/javadoc:javadoc.bzl", "javadoc_library")
 
 package(
     default_applicable_licenses = ["//:j2cl_license"],
@@ -23,5 +23,13 @@ java_library(
         "//transpiler/java/com/google/j2cl/transpiler/backend/kotlin",
         "//transpiler/java/com/google/j2cl/transpiler/backend/wasm",
         "//transpiler/java/com/google/j2cl/transpiler/passes",
+    ],
+)
+
+javadoc_library(
+    name = "backend-javadoc",
+    srcs = glob(["*.java"]),
+    deps = [
+        ":backend",
     ],
 )

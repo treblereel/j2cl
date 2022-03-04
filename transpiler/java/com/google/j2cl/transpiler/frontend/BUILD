@@ -1,7 +1,7 @@
 # Description:
 #   This package contains frontend driver code.
 
-load("@rules_java//java:defs.bzl", "java_library")
+load("@bazel_common//tools/javadoc:javadoc.bzl", "javadoc_library")
 
 package(
     default_applicable_licenses = ["//:j2cl_license"],
@@ -22,5 +22,13 @@ java_library(
         "//transpiler/java/com/google/j2cl/transpiler/frontend/common",
         "//transpiler/java/com/google/j2cl/transpiler/frontend/javac",
         "//transpiler/java/com/google/j2cl/transpiler/frontend/jdt",
+    ],
+)
+
+javadoc_library(
+    name = "frontend-javadoc",
+    srcs = glob(["*.java"]),
+    deps = [
+        ":frontend",
     ],
 )
