@@ -23,3 +23,11 @@ kt_jvm_library(
         "//transpiler/java/com/google/j2cl/transpiler/backend/kotlin/source",
     ],
 )
+
+#javadoc_library(
+#    name = "kotlin-javadoc",
+#    srcs = glob(["*.javadoc"]),
+#    deps = [
+#        ":kotlin",
+#    ],
+#)
