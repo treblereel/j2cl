@@ -26,10 +26,10 @@ jobs:
 
               cd closure-library
               git remote update
-              git reset --hard v20210808
+              git reset --hard v20230502
             else
               echo cloning repository
-              git clone -b v20210808 https://github.com/google/closure-library
+              git clone -b v20230502 https://github.com/google/closure-library
             fi
       - save_cache: # TODO this should probably be using workspace, not cache
           name: Saving Cache - closure-library
