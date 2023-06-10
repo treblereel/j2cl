@@ -10,7 +10,9 @@ ${BAZEL} build //tools/java/com/google/j2cl/tools/minifier:*
 
 ${BAZEL} build //jre/java/javaemul/internal/vmbootstrap/primitives:primitives
 
-${BAZEL} build //jre/java:*
+${BAZEL} build //jre/java/super-wasm/javaemul/internal/wasmarray:wasmarray
+
+#${BAZEL} build //jre/java:*
 
 ${BAZEL} build //junit/emul/java:*
 ${BAZEL} build //jre/javatests/com/google/gwt/junit:*
