@@ -7,7 +7,7 @@
   <parent>
     <groupId>com.vertispan.j2cl</groupId>
     <artifactId>j2cl-parent</artifactId>
-    <version>0.11.0-923320b4b</version>
+    <version>0.11.0-a02e7d516</version>
   </parent>
   <artifactId>minifier</artifactId>
   <packaging>pom</packaging>

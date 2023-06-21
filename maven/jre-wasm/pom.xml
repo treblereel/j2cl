@@ -9,7 +9,7 @@
         <artifactId>j2cl-parent</artifactId>
         <version>0.11.0-a02e7d516</version>
     </parent>
-    <artifactId>javac-bootstrap-classpath</artifactId>
+    <artifactId>jre-wasm</artifactId>
     <packaging>pom</packaging>
 
     <build>
@@ -28,20 +28,9 @@
                         <configuration>
                             <artifacts>
                                 <artifact>
-                                    <file>../../bazel-bin/jre/java/libjre_bootclasspath.jar</file>
+                                    <file>../../bazel-bin/jre/java/libjre-j2wasm-src.jar</file>
                                     <type>jar</type>
                                 </artifact>
-                                <artifact>
-                                    <file>../../bazel-bin/jre/java/libjre_bootclasspath-src.jar</file>
-                                    <type>jar</type>
-                                    <classifier>sources</classifier>
-                                </artifact>
-                                <!-- Still imported from gwtproject, and pretty sparse docs anyway -->
-<!--                                <artifact>-->
-<!--                                    <file>../../bazel-bin/jre/java/jre_bootclasspath-javadoc.jar</file>-->
-<!--                                    <type>jar</type>-->
-<!--                                    <classifier>javadoc</classifier>-->
-<!--                                </artifact>-->
                             </artifacts>
                         </configuration>
                     </execution>
@@ -77,11 +66,17 @@
         </plugins>
     </build>
     <dependencies>
+        <dependency>
+            <groupId>com.google.jsinterop</groupId>
+            <artifactId>jsinterop-annotations</artifactId>
+        </dependency>
+
         <!-- may not be required here, but has to be lumped in to the j2cl bytecode classpath -->
         <dependency>
             <groupId>com.vertispan.j2cl</groupId>
             <artifactId>gwt-internal-annotations</artifactId>
             <version>${project.version}</version>
         </dependency>
+
     </dependencies>
 </project>

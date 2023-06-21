@@ -9,11 +9,26 @@
         <artifactId>j2cl-parent</artifactId>
         <version>0.11.0-a02e7d516</version>
     </parent>
-    <artifactId>javac-bootstrap-classpath</artifactId>
+    <artifactId>javaemul-internal-annotations-stripped</artifactId>
     <packaging>pom</packaging>
 
     <build>
         <plugins>
+            <!--            <plugin>
+                            <artifactId>maven-assembly-plugin</artifactId>
+                            <version>3.1.0</version>
+                            <executions>
+                                <execution>
+                                    <phase>prepare-package</phase>
+                                    <goals><goal>single</goal></goals>
+                                </execution>
+                            </executions>
+                            <configuration>
+                                <descriptors>
+                                    <descriptor>assembly.xml</descriptor>
+                                </descriptors>
+                            </configuration>
+                        </plugin>-->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
@@ -28,20 +43,9 @@
                         <configuration>
                             <artifacts>
                                 <artifact>
-                                    <file>../../bazel-bin/jre/java/libjre_bootclasspath.jar</file>
+                                    <file>../../bazel-bin/jre/java/libjavaemul_internal_annotations-hjar.jar</file>
                                     <type>jar</type>
                                 </artifact>
-                                <artifact>
-                                    <file>../../bazel-bin/jre/java/libjre_bootclasspath-src.jar</file>
-                                    <type>jar</type>
-                                    <classifier>sources</classifier>
-                                </artifact>
-                                <!-- Still imported from gwtproject, and pretty sparse docs anyway -->
-<!--                                <artifact>-->
-<!--                                    <file>../../bazel-bin/jre/java/jre_bootclasspath-javadoc.jar</file>-->
-<!--                                    <type>jar</type>-->
-<!--                                    <classifier>javadoc</classifier>-->
-<!--                                </artifact>-->
                             </artifacts>
                         </configuration>
                     </execution>
@@ -76,12 +80,4 @@
             </plugin>
         </plugins>
     </build>
-    <dependencies>
-        <!-- may not be required here, but has to be lumped in to the j2cl bytecode classpath -->
-        <dependency>
-            <groupId>com.vertispan.j2cl</groupId>
-            <artifactId>gwt-internal-annotations</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-    </dependencies>
 </project>
