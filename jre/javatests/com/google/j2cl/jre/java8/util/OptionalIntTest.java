@@ -20,10 +20,11 @@ import static com.google.j2cl.jre.testing.TestUtils.isWasm;
 import com.google.j2cl.jre.testing.J2ktIncompatible;
 import java.util.NoSuchElementException;
 import java.util.OptionalInt;
-import junit.framework.TestCase;
 
-/** Tests for OptionalInt JRE emulation. */
-public class OptionalIntTest extends TestCase {
+/**
+ * Tests for OptionalInt JRE emulation.
+ */
+public class OptionalIntTest extends GWTTestCase {
 
   private static final int REFERENCE = 10;
   private static final int OTHER_REFERENCE = 20;
@@ -32,8 +33,13 @@ public class OptionalIntTest extends TestCase {
   private OptionalInt present;
 
   @Override
-  protected void setUp() throws Exception {
-    super.setUp();
+  public String getModuleName() {
+    return "com.google.gwt.emultest.EmulSuite";
+  }
+
+  @Override
+  protected void gwtSetUp() throws Exception {
+    super.gwtSetUp();
     mutableFlag = new boolean[1];
     empty = OptionalInt.empty();
     present = OptionalInt.of(REFERENCE);

@@ -20,10 +20,11 @@ import static com.google.j2cl.jre.testing.TestUtils.isWasm;
 import com.google.j2cl.jre.testing.J2ktIncompatible;
 import java.util.NoSuchElementException;
 import java.util.Optional;
-import junit.framework.TestCase;
 
-/** Tests for Optional JRE emulation. */
-public class OptionalTest extends TestCase {
+/**
+ * Tests for Optional JRE emulation.
+ */
+public class OptionalTest extends GWTTestCase {
 
   private static final Object REFERENCE = new Object();
   private static final Object OTHER_REFERENCE = new Object();
@@ -34,8 +35,13 @@ public class OptionalTest extends TestCase {
   private Optional<Object> otherPresent;
 
   @Override
-  protected void setUp() throws Exception {
-    super.setUp();
+  public String getModuleName() {
+    return "com.google.gwt.emultest.EmulSuite";
+  }
+
+  @Override
+  protected void gwtSetUp() throws Exception {
+    super.gwtSetUp();
     mutableFlag = new boolean[1];
     empty = Optional.empty();
     present = Optional.of(REFERENCE);

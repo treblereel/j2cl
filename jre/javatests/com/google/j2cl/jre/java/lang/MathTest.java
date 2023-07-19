@@ -79,7 +79,12 @@ public class MathTest extends TestCase {
   }
 
   @Override
-  protected void setUp() throws Exception {
+  public String getModuleName() {
+    return "com.google.gwt.emultest.EmulSuite";
+  }
+
+  @Override
+  protected void gwtSetUp() throws Exception {
     // Ensure -0.0 vs 0.0 behavior
     assertPositiveZero(0.0);
     assertNegativeZero(-0.0);

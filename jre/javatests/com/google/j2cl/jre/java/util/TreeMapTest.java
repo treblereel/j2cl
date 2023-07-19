@@ -3549,7 +3549,7 @@ abstract class TreeMapTest<K extends @Nullable Object, V extends @Nullable Objec
   protected abstract Object getConflictingValue();
 
   @Override
-  protected void setUp() throws Exception {
+  protected void gwtSetUp() throws Exception {
     setComparator(null);
   }
 
