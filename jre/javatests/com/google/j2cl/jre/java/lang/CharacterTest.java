@@ -15,11 +15,13 @@
  */
 package com.google.j2cl.jre.java.lang;
 
+import com.google.gwt.junit.client.GWTTestCase;
 import java.util.Arrays;
-import junit.framework.TestCase;
 
-/** Tests for java.lang.Character. */
-public class CharacterTest extends TestCase {
+/**
+ * Tests for java.lang.Character.
+ */
+public class CharacterTest extends GWTTestCase {
 
   private static class CharSequenceAdapter implements CharSequence {
     private final char[] charArray;
@@ -174,6 +176,11 @@ public class CharacterTest extends TestCase {
         }
       };
   private static final Judge upperCaseJudge = new UpperCaseJudge(ALL_CHARS);
+
+  @Override
+  public String getModuleName() {
+    return "com.google.gwt.emultest.EmulSuite";
+  }
 
   public void testCharValue() {
     assertEquals((char) 32, new Character((char) 32).charValue());

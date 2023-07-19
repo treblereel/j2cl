@@ -20,10 +20,11 @@ import static com.google.j2cl.jre.testing.TestUtils.isWasm;
 import com.google.j2cl.jre.testing.J2ktIncompatible;
 import java.util.NoSuchElementException;
 import java.util.OptionalLong;
-import junit.framework.TestCase;
 
-/** Tests for OptionalLong JRE emulation. */
-public class OptionalLongTest extends TestCase {
+/**
+ * Tests for OptionalLong JRE emulation.
+ */
+public class OptionalLongTest extends GWTTestCase {
 
   private static final long REFERENCE = 10L;
   private static final long OTHER_REFERENCE = 20L;
@@ -32,8 +33,13 @@ public class OptionalLongTest extends TestCase {
   private OptionalLong present;
 
   @Override
-  protected void setUp() throws Exception {
-    super.setUp();
+  public String getModuleName() {
+    return "com.google.gwt.emultest.EmulSuite";
+  }
+
+  @Override
+  protected void gwtSetUp() throws Exception {
+    super.gwtSetUp();
     mutableFlag = new boolean[1];
     empty = OptionalLong.empty();
     present = OptionalLong.of(REFERENCE);
