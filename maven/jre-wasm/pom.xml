@@ -10,32 +10,48 @@
         <version>0.11.0-a02e7d516</version>
     </parent>
     <artifactId>jre-wasm</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <build>
+        <resources>
+            <resource>
+                <directory>../../bazel-bin/jre/java/super-wasm/</directory>
+                <includes>
+                    <include>**/WasmArray.java</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>../../jre/java/super-wasm</directory>
+                <includes>
+                    <include>**/*.java</include>
+                </includes>
+                <excludes>
+                    <exclude>**/module-info.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>../../jre/java</directory>
+                <includes>
+                    <include>**/*.java</include>
+                </includes>
+                <excludes>
+                    <exclude>**/package-info.java</exclude>
+                    <exclude>**/module-info.java</exclude>
+                    <exclude>java/util/InternalHashCodeMap.java</exclude>
+                    <exclude>java/util/InternalJsMap.java</exclude>
+                    <exclude>java/util/InternalStringMap.java</exclude>
+                    <exclude>java/util/AbstractHashMap.java</exclude>
+                    <exclude>javaemul/internal/Casts.java</exclude>
+                    <exclude>javaemul/internal/ArrayStamper.java</exclude>
+                    <exclude>javaemul/internal/Comparables.java</exclude>
+                    <exclude>javaemul/internal/Objects.java</exclude>
+                    <exclude>javaemul/internal/WasmArray.java</exclude>
+                    <exclude>super-wasm/</exclude>
+                    <exclude>super-wasm-alt/</exclude>
+                </excludes>
+            </resource>
+        </resources>
         <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <version>3.0.0</version>
-                <executions>
-                    <execution>
-                        <id>attach-artifacts</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>attach-artifact</goal>
-                        </goals>
-                        <configuration>
-                            <artifacts>
-                                <artifact>
-                                    <file>../../bazel-bin/jre/java/libjre-j2wasm-src.jar</file>
-                                    <type>jar</type>
-                                </artifact>
-                            </artifacts>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
             <!-- Create an empty javadoc jar for now -->
             <plugin>
                 <artifactId>maven-jar-plugin</artifactId>
