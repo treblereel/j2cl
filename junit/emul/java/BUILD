@@ -34,7 +34,7 @@ j2cl_library(
     javacopts = [
         "-Xep:DoNotCall:OFF",
     ],
-    visibility = ["//:__pkg__"],
+    visibility = ["//:__pkg__", "//jre:__subpackages__"],
     deps = [
         "//junit/generator/java/com/google/j2cl/junit/runtime:internal_assumption_violated_exception-j2cl",
     ],
