@@ -18,7 +18,7 @@ package com.google.j2cl.jre.java8.util;
 import static com.google.j2cl.jre.testing.TestUtils.isWasm;
 
 import java.util.StringJoiner;
-
+ 
 /**
  * Tests StringJoiner.
  */

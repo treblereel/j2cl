@@ -6,7 +6,7 @@
 
   <groupId>com.vertispan.j2cl</groupId>
   <artifactId>j2cl-parent</artifactId>
-  <version>v20230718-1</version>
+  <version>v20240603-1</version>
   <packaging>pom</packaging>
 
   <name>J2CL</name>

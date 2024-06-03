@@ -16,6 +16,7 @@ ${BAZEL} build //junit/emul/java:*
 ${BAZEL} build //jre/javatests/com/google/gwt/junit:*
 ${BAZEL} build //junit/generator/java/com/google/j2cl/junit/async:*
 ${BAZEL} build //junit/generator/java/com/google/j2cl/junit/apt:*
+${BAZEL} build //junit/generator/java/com/google/j2cl/junit/runtime:*
 
 #${BAZEL} build @org_gwtproject_gwt//user:libgwt-javaemul-internal-annotations.jar
 #${BAZEL} build @org_gwtproject_gwt//user:libgwt-javaemul-internal-annotations-src.jar
