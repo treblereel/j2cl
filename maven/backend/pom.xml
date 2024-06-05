@@ -73,11 +73,11 @@
             <artifactId>backend-closure</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
+<!--         <dependency>
             <groupId>com.vertispan.j2cl</groupId>
             <artifactId>backend-kotlin</artifactId>
             <version>${project.version}</version>
-        </dependency>
+        </dependency> -->
         <dependency>
             <groupId>com.vertispan.j2cl</groupId>
             <artifactId>backend-wasm</artifactId>
