@@ -8,12 +8,30 @@
         <groupId>com.vertispan.j2cl</groupId>
         <artifactId>j2cl-parent</artifactId>
         <version>v20240603-1</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
-    <artifactId>backend-kotlin-source</artifactId>
+    <artifactId>junit-runtime</artifactId>
     <packaging>pom</packaging>
 
-<!--     <build>
+    
+
+    <build>
         <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                  <execution>
+                    <phase>prepare-package</phase>
+                    <goals><goal>single</goal></goals>
+                  </execution>
+                </executions>
+                <configuration>
+                  <descriptors>
+                    <descriptor>assembly.xml</descriptor>
+                  </descriptors>
+                </configuration>
+              </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>build-helper-maven-plugin</artifactId>
@@ -28,13 +46,18 @@
                         <configuration>
                             <artifacts>
                                 <artifact>
-                                    <file>../../bazel-bin/transpiler/java/com/google/j2cl/transpiler/backend/kotlin/source/source.jar</file>
+                                    <file>../../../bazel-bin/junit/generator/java/com/google/j2cl/junit/runtime/libjsunit_helpers-j2cl.jar</file>
                                     <type>jar</type>
                                 </artifact>
                                 <artifact>
-                                    <file>../../bazel-bin/transpiler/java/com/google/j2cl/transpiler/backend/kotlin/source/source-sources.jar</file>
+                                    <file>../../../bazel-bin/junit/generator/java/com/google/j2cl/junit/runtime/libjsunit_helpers-src.jar</file>
                                     <type>jar</type>
                                     <classifier>sources</classifier>
+                                </artifact>
+                                <artifact>
+                                    <file>../../../bazel-bin/junit/generator/java/com/google/j2cl/junit/async/async-javadoc.jar</file>
+                                    <type>jar</type>
+                                    <classifier>javadoc</classifier>
                                 </artifact>
                             </artifacts>
                         </configuration>
@@ -42,12 +65,5 @@
                 </executions>
             </plugin>
         </plugins>
-    </build> -->
-    <dependencies>
-        <dependency>
-            <groupId>com.vertispan.j2cl</groupId>
-            <artifactId>backend-common</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-    </dependencies>
+    </build>
 </project>

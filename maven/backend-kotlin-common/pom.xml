@@ -12,7 +12,7 @@
     <artifactId>backend-kotlin-common</artifactId>
     <packaging>pom</packaging>
 
-    <build>
+<!--     <build>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -28,26 +28,17 @@
                         <configuration>
                             <artifacts>
                                 <artifact>
-                                    <file>../../bazel-bin/transpiler/java/com/google/j2cl/transpiler/backend/kotlin/common/common.jar</file>
-                                    <type>jar</type>
-                                </artifact>
-                                <artifact>
                                     <file>../../bazel-bin/transpiler/java/com/google/j2cl/transpiler/backend/kotlin/common/common-sources.jar</file>
                                     <type>jar</type>
                                     <classifier>sources</classifier>
                                 </artifact>
-                                <!--                                <artifact>-->
-                                <!--                                    <file>../../bazel-bin/transpiler/java/com/google/j2cl/transpiler/backend/kotlin/common/common-javadoc.jar</file>-->
-                                <!--                                    <type>jar</type>-->
-                                <!--                                    <classifier>javadoc</classifier>-->
-                                <!--                                </artifact>-->
                             </artifacts>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
-    </build>
+    </build> -->
     <dependencies>
     </dependencies>
 </project>

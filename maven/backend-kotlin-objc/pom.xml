@@ -12,7 +12,7 @@
     <artifactId>backend-kotlin-objc</artifactId>
     <packaging>pom</packaging>
 
-    <build>
+<!--     <build>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -36,18 +36,13 @@
                                     <type>jar</type>
                                     <classifier>sources</classifier>
                                 </artifact>
-                                <!--                                <artifact>-->
-                                <!--                                    <file>../../bazel-bin/transpiler/java/com/google/j2cl/transpiler/backend/kotlin/objc/objc-javadoc.jar</file>-->
-                                <!--                                    <type>jar</type>-->
-                                <!--                                    <classifier>javadoc</classifier>-->
-                                <!--                                </artifact>-->
                             </artifacts>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
-    </build>
+    </build> -->
     <dependencies>
         <dependency>
             <groupId>com.vertispan.j2cl</groupId>

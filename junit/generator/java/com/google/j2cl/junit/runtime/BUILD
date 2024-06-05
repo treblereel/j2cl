@@ -1,5 +1,6 @@
 load("@io_bazel_rules_closure//closure:defs.bzl", "closure_js_library")
 load("//build_defs:rules.bzl", "j2cl_library", "j2wasm_library")
+load("@bazel_common//tools/javadoc:javadoc.bzl", "javadoc_library")
 
 package(
     default_applicable_licenses = ["//:j2cl_license"],
@@ -27,6 +28,27 @@ j2wasm_library(
         ":internal_assumption_violated_exception-j2wasm",
         "//:jsinterop-annotations-j2wasm",
         "//jre/java:javaemul_internal_annotations-j2wasm",
+        "//third_party:closure_testcase",
+    ],
+)
+
+j2cl_library(
+    name = "jsunit_helpers",
+    testonly = 1,
+    srcs = ["JsUnitHelpers.java"],
+    visibility = ["//build_defs/internal_do_not_use:__pkg__"],
+    deps = [
+        "//:jsinterop-annotations-j2cl",
+        "//third_party:closure_testcase",
+    ],
+)
+
+javadoc_library(
+    name = "jsunit_helpers-javadoc",
+    testonly = 1,
+    srcs = ["JsUnitHelpers.java"],
+    deps = [
+        "//:jsinterop-annotations",
         "//third_party:closure_testcase",
     ],
 )
