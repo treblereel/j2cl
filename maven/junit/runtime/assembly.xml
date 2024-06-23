@@ -8,7 +8,7 @@
     <includeBaseDirectory>false</includeBaseDirectory>
     <fileSets>
         <fileSet>
-            <directory>../../../bazel-bin/junit/generator/java/com/google/j2cl/junit/runtime/jsunit_helpers.js</directory>
+            <directory>../../../bazel-bin/junit/generator/java/com/google/j2cl/junit/runtime/jsunit_helpers_internal_assumption_violated_exception-j2cl.js</directory>
         </fileSet>
     </fileSets>
 </assembly>

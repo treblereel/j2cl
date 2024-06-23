@@ -40,6 +40,8 @@ j2cl_library(
     deps = [
         "//:jsinterop-annotations-j2cl",
         "//third_party:closure_testcase",
+        "//jre/java:javaemul_internal_annotations-j2cl",
+        ":internal_assumption_violated_exception-j2cl",
     ],
 )
 
@@ -50,6 +52,8 @@ javadoc_library(
     deps = [
         "//:jsinterop-annotations",
         "//third_party:closure_testcase",
+        ":internal_assumption_violated_exception",
+        "//jre/java:javaemul_internal_annotations",
     ],
 )
 
@@ -82,3 +86,53 @@ j2cl_library(
         "//junit/emul/java:__pkg__",
     ],
 )
+
+java_library(
+    name = "internal_assumption_violated_exception",
+    srcs = ["InternalAssumptionViolatedException.java"],
+    visibility = [
+        "//build_defs/internal_do_not_use:__pkg__",
+        "//junit/emul/java:__pkg__",
+    ],
+)
+
+java_library(
+    name = "jsunit_helpers_internal_assumption_violated_exception",
+    srcs = ["JsUnitHelpers.java", "InternalAssumptionViolatedException.java"],
+    visibility = [
+        "//build_defs/internal_do_not_use:__pkg__",
+        "//junit/emul/java:__pkg__",
+    ],
+    deps = [
+        "//:jsinterop-annotations",
+        "//jre/java:javaemul_internal_annotations",
+    ],
+)
+
+j2cl_library(
+    name = "jsunit_helpers_internal_assumption_violated_exception-j2cl",
+    srcs = ["JsUnitHelpers.java", "InternalAssumptionViolatedException.java"],
+    visibility = [
+        "//build_defs/internal_do_not_use:__pkg__",
+        "//junit/emul/java:__pkg__",
+    ],
+    deps = [
+        "//:jsinterop-annotations-j2cl",
+        "//jre/java:javaemul_internal_annotations-j2cl",
+    ],
+)
+
+javadoc_library(
+    name = "jsunit_helpers_internal_assumption_violated_exception-javadoc",
+    srcs = ["JsUnitHelpers.java", "InternalAssumptionViolatedException.java"],
+    visibility = [
+        "//build_defs/internal_do_not_use:__pkg__",
+        "//junit/emul/java:__pkg__",
+    ],
+    deps = [
+        "//:jsinterop-annotations",
+        "//jre/java:javaemul_internal_annotations",
+    ],
+)
+
+

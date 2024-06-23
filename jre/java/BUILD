@@ -49,6 +49,7 @@ java_library(
         "//jre/javatests:__subpackages__",
         "@com_google_jsinterop_base//:__subpackages__",
         "//transpiler/javatests:__subpackages__",
+        "//junit/generator/java/com/google/j2cl/junit/runtime:__pkg__",
     ],
 )
 

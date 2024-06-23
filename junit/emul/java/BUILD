@@ -21,6 +21,9 @@ java_library(
         "//:__pkg__",
         "//jre:__subpackages__",
     ],
+    deps = [
+        "//junit/generator/java/com/google/j2cl/junit/runtime:internal_assumption_violated_exception",
+    ],
 )
 
 j2cl_library(
@@ -70,5 +73,6 @@ javadoc_library(
     srcs = glob(["**/*.java"]),
     deps = [
         ":junit_emul",
+        "//junit/generator/java/com/google/j2cl/junit/runtime:internal_assumption_violated_exception",
     ],
 )
