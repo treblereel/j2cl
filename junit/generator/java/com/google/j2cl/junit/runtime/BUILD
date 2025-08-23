@@ -1,5 +1,7 @@
 load("@rules_closure//closure:defs.bzl", "closure_js_library")
 load("//build_defs:rules.bzl", "j2cl_library", "j2wasm_library")
+load("@rules_java//java:defs.bzl", "java_library", "java_plugin")
+load("@google_bazel_common//tools/javadoc:javadoc.bzl", "javadoc_library")
 
 package(
     default_applicable_licenses = ["//:j2cl_license"],
@@ -73,5 +75,25 @@ j2cl_library(
     visibility = [
         "//build_defs/internal_do_not_use:__pkg__",
         "//junit/emul/java:__pkg__",
+    ],
+)
+
+java_library(
+    name = "internal_assumption_violated_exception",
+    srcs = ["InternalAssumptionViolatedException.java"],
+    visibility = [
+        "//build_defs/internal_do_not_use:__pkg__",
+        "//junit/emul/java:__pkg__",
+    ],
+)
+
+javadoc_library(
+    name = "junit_runtime-javadoc",
+    srcs = glob(["*.java"]),
+    testonly = 1,
+    deps = [
+        "//:jsinterop-annotations",
+        "//jre/java:javaemul_internal_annotations",
+        "//junit/emul/java:junit_emul-jdk",
     ],
 )

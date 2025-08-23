@@ -1,5 +1,6 @@
 load("//build_defs:rules.bzl", "j2cl_library")
 load("@rules_java//java:defs.bzl", "java_library", "java_plugin")
+load("@google_bazel_common//tools/javadoc:javadoc.bzl", "javadoc_library")
 
 package(
     default_applicable_licenses = ["//:j2cl_license"],
@@ -38,5 +39,14 @@ java_library(
         "//third_party:jsinterop-annotations",
         "//third_party:jsr305_annotations",
         "//third_party:junit",
+    ],
+)
+
+javadoc_library(
+    name = "junit_processor-javadoc",
+    testonly = 1,
+    srcs = glob(["*.java"]),
+    deps = [
+        ":junit_processor",
     ],
 )

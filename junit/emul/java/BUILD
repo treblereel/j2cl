@@ -47,3 +47,20 @@ j2kt_native_library(
         "//junit/generator/java/com/google/j2cl/junit/runtime:internal_assumption_violated_exception-j2kt-native",
     ],
 )
+
+java_library(
+    name = "junit_emul-jdk",
+    srcs = glob(
+        ["**/*.java"],
+        exclude = [
+            "org/junit/super-j2kt/*.java",
+        ],
+    ),
+    javacopts = [
+        "-Xep:DoNotCall:OFF",
+    ],
+    visibility = ["//junit/generator/java/com/google/j2cl/junit/runtime:__pkg__"],
+    deps = [
+        "//junit/generator/java/com/google/j2cl/junit/runtime:internal_assumption_violated_exception",
+    ],
+)
