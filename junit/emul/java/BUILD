@@ -1,3 +1,4 @@
+load("@rules_java//java:defs.bzl", "java_library")
 load("//build_defs:rules.bzl", "j2cl_library", "j2kt_jvm_import", "j2kt_native_library")
 
 package(
@@ -16,9 +17,32 @@ j2cl_library(
     javacopts = [
         "-Xep:DoNotCall:OFF",
     ],
-    visibility = ["//:__pkg__"],
+    visibility = [
+        "//:__pkg__",
+        "//junit/generator/java/com/google/j2cl/junit/runtime:__pkg__",
+    ],
     deps = [
         "//junit/generator/java/com/google/j2cl/junit/runtime:internal_assumption_violated_exception-j2cl",
+    ],
+)
+
+java_library(
+    name = "junit_emul-jdk",
+    srcs = glob(
+        ["**/*.java"],
+        exclude = [
+            "org/junit/super-j2kt/*.java",
+        ],
+    ),
+    javacopts = [
+        "-Xep:DoNotCall:OFF",
+    ],
+    visibility = [
+        "//junit/emul/java/com/google/gwt/junit:__pkg__",
+        "//junit/generator/java/com/google/j2cl/junit/runtime:__pkg__",
+    ],
+    deps = [
+        "//junit/generator/java/com/google/j2cl/junit/runtime:internal_assumption_violated_exception",
     ],
 )
 

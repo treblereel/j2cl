@@ -123,6 +123,12 @@ public class JavacParser {
 
                 var cu = (JCCompilationUnit) taskEvent.getCompilationUnit();
                 var sourcePath = cu.getSourceFile().getName();
+
+                // Skip source files found inside classpath jars (path format: "foo.jar(/Bar.java)")
+                if (sourcePath.contains(".jar(")) {
+                  return;
+                }
+
                 var isGenerated = !fileInfoBySourcePath.containsKey(sourcePath);
 
                 if (isGenerated) {

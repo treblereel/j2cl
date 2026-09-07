@@ -1,0 +1,25 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.0.0 http://maven.apache.org/xsd/assembly-2.0.0.xsd">
+  <id>jszip</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <fileSets>
+    <fileSet>
+      <directory>testing/</directory>
+      <includes>
+        <include>asserts.js</include>
+        <include>jsunit.js</include>
+        <include>jsunitexception.js</include>
+        <include>pending.js</include>
+        <include>stacktrace.js</include>
+        <include>testcase.js</include>
+        <include>testrunner.js</include>
+        <include>testsuite.js</include>
+      </includes>
+      <outputDirectory>closure/goog</outputDirectory>
+    </fileSet>
+  </fileSets>
+</assembly>

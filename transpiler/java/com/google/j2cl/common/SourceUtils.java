@@ -42,7 +42,7 @@ public class SourceUtils {
       return create(sourcePath, getJavaPath(sourcePath));
     }
 
-    static FileInfo create(String sourcePath, String originalPath) {
+    public static FileInfo create(String sourcePath, String originalPath) {
       return create(sourcePath, originalPath, originalPath);
     }
 

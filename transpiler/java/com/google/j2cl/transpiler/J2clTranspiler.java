@@ -27,10 +27,10 @@ import com.google.j2cl.transpiler.passes.NormalizationPass;
 import java.util.function.Supplier;
 
 /** Translation tool for generating JavaScript source files from Java sources. */
-class J2clTranspiler {
+public class J2clTranspiler {
 
   /** Runs the entire J2CL pipeline. */
-  static void transpile(J2clTranspilerOptions options, Problems problems) {
+  public static void transpile(J2clTranspilerOptions options, Problems problems) {
     new J2clTranspiler(options, problems).transpileImpl();
   }
 

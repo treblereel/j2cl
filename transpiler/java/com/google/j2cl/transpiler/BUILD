@@ -9,10 +9,12 @@ package(
 java_library(
     name = "transpiler_lib",
     srcs = [
+        "J2clCommandLineRunner.java",
         "J2clTranspiler.java",
         "J2clTranspilerOptions.java",
     ],
     deps = [
+        "//third_party:args4j",
         "//third_party:auto_value",
         "//third_party:error_prone_annotations",
         "//third_party:guava",

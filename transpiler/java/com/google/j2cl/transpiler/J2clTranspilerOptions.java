@@ -100,7 +100,7 @@ public abstract class J2clTranspilerOptions implements FrontendOptions, BackendO
 
     public abstract Builder setOptimizeAutoValue(boolean b);
 
-    abstract Builder setFrontend(Frontend frontend);
+    public abstract Builder setFrontend(Frontend frontend);
 
     public abstract Builder setBackend(Backend backend);
 

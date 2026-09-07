@@ -1,4 +1,5 @@
 load("@rules_closure//closure:defs.bzl", "closure_js_library")
+load("@rules_java//java:defs.bzl", "java_library")
 load("//build_defs:rules.bzl", "j2cl_library", "j2wasm_library")
 
 package(
@@ -73,5 +74,25 @@ j2cl_library(
     visibility = [
         "//build_defs/internal_do_not_use:__pkg__",
         "//junit/emul/java:__pkg__",
+    ],
+)
+
+java_library(
+    name = "internal_assumption_violated_exception",
+    srcs = ["InternalAssumptionViolatedException.java"],
+    visibility = [
+        "//build_defs/internal_do_not_use:__pkg__",
+        "//junit/emul/java:__pkg__",
+    ],
+)
+
+java_library(
+    name = "junit_runtime",
+    srcs = glob(["*.java"]),
+    resources = glob(["*.js"]),
+    deps = [
+        "//:jsinterop-annotations",
+        "//jre/java:javaemul_internal_annotations",
+        "//junit/emul/java:junit_emul-jdk",
     ],
 )

@@ -126,6 +126,8 @@ public final class ReadableSourceMapGenerator {
       return "[" + content + "]";
     }
 
+    startColumn = Math.min(startColumn, fragment.length());
+    endColumn = Math.min(endColumn, fragment.length());
     return "[" + fragment.substring(startColumn, endColumn) + "]";
   }
 
