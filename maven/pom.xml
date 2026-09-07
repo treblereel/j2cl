@@ -59,6 +59,8 @@
 
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <maven.flatten.plugin>1.5.0</maven.flatten.plugin>
+        <maven.central.publishing.plugin>0.9.0</maven.central.publishing.plugin>
     </properties>
 
     <modules>
@@ -74,11 +76,12 @@
         <module>backend</module>
         <module>backend-closure</module>
         <module>backend-common</module>
-        <module>backend-kotlin</module>
+
+<!--        <module>backend-kotlin</module>
         <module>backend-kotlin-objc</module>
         <module>backend-kotlin-common</module>
         <module>backend-kotlin-source</module>
-        <module>backend-kotlin-ast</module>
+        <module>backend-kotlin-ast</module>-->
         <module>backend-libraryinfo</module>
         <module>backend-libraryinfo-proto</module>
         <module>backend-wasm</module>
@@ -258,8 +261,22 @@
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <configuration>
+                            <failOnError>false</failOnError>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.5</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -270,28 +287,43 @@
                             </execution>
                         </executions>
                     </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>${maven.central.publishing.plugin}</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <publishingServerId>central</publishingServerId>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>flatten-maven-plugin</artifactId>
+                        <version>${maven.flatten.plugin}</version>
+                        <configuration>
+                            <flattenMode>oss</flattenMode>
+                            <updatePomFile>true</updatePomFile>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>flatten</id>
+                                <phase>process-resources</phase>
+                                <goals>
+                                    <goal>flatten</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>flatten.clean</id>
+                                <phase>clean</phase>
+                                <goals>
+                                    <goal>clean</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
                 </plugins>
             </build>
         </profile>
     </profiles>
-    <repositories>
-        <repository>
-            <id>jboss</id>
-            <name>JBoss Public Repo</name>
-            <url>https://repository.jboss.org/nexus/content/groups/public</url>
-        </repository>
-        <repository>
-            <id>sonatype-public</id>
-            <name>Sonatype Public Snapshots Repo</name>
-            <url>https://oss.sonatype.org/content/repositories/public</url>
-        </repository>
-    </repositories>
 
-    <distributionManagement>
-        <repository>
-            <id>jboss-public-repository-group</id>
-            <name>JBoss Public Repository Group</name>
-            <url>https://repository.jboss.org/nexus/repository/releases/</url>
-        </repository>
-    </distributionManagement>
 </project>
